@@ -1,0 +1,58 @@
+[HTTP-METHOD] : [RUTA]
+[BODY]
+
+------------------------------------------------------------
+[GET BY ID]: /alumno/:rut:
+
+curl --location 'localhost:8080/api/alumno/158124416'
+------------------------------------------------------------
+[GET ALL]: /alumnos
+
+curl --location 'localhost:8080/api/alumnos'
+------------------------------------------------------------
+[POST]: /alumno
+
+curl --location 'localhost:8080/api/alumno/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "rut": 13775774,
+    "apellido": "Jackson",
+    "ciudad": "FLORIDA",
+    "domicilio": "FIVE STREET 332",
+    "edad": 60,
+    "fecha": "10-07-2023",
+    "fechaNacimiento": "14-10-1965",
+    "nombre": "Michael",
+    "curso": "Music",
+    "pago": 10000,
+    "correo": "Michael@gmail.cl"
+}'
+-----------------------------------------------------------
+
+[PUT]: /alumno/:rut
+
+curl --location --request PUT 'localhost:8080/api/alumno/12332112' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "_id": "6444364cf34b3a88b29bc87a",
+    "rut": 12332112,
+    "nombre": "Primero",
+    "apellido": "Segundo",
+    "edad": 45,
+    "fechaNacimiento": "24-11-1994",
+    "correo": "primero@gmail.cl",
+    "domicilio": "Las condes",
+    "ciudad": "San bernardo",
+    "fecha": "04-09-2023",
+    "pago": 5655,
+    "curso": "tercero",
+    "__v": 0
+}'
+
+---------------------------------------------------------------
+
+[DELETE]: /alumno/:rut
+
+curl --location --request DELETE 'localhost:8080/api/alumno/999999999'
+
+
