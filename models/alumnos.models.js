@@ -43,6 +43,10 @@ const alumnoSchema = Schema({
         type: Number,
         require: true,
     },
+    valorUf: {
+        type: Number,
+        require: true,
+    },
     curso: {
         type: String,
         require: true

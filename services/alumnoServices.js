@@ -9,11 +9,13 @@ const getAlumnoByIdServices = async(req, res) => {
 
 //Retorna todos los alumnos
 const getAllAlumnosServices = async(req) => {
+    
     return await AlumnoModel.find(req);
+    
 }
 
 //Agrega Alumnos Matriculados
-const addAlumnoServices = async (req) => {
+const addAlumnoServices = async (req, res) => {
     try {
         const alumno = req.body;
         const newAlumno = new AlumnoModel(alumno)

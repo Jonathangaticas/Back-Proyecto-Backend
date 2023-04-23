@@ -1,4 +1,5 @@
-const { updateAlumnoServices, getAllAlumnosServices, addAlumnoServices, deleteAlumnoServices, getAlumnoByIdServices } = require('../services/alumnoServices')
+const { updateAlumnoServices, getAllAlumnosServices, addAlumnoServices, deleteAlumnoServices, getAlumnoByIdServices } = require('../services/alumnoServices');
+const getUfServices = require('../services/getUf');
 
 const getAlumnoByIdController = async (req, res) => {
     const getAlumno = await getAlumnoByIdServices(req);
@@ -20,10 +21,14 @@ const deleteAlumnoController = async (req, res) => {
     const deleteAlumno = await deleteAlumnoServices(req);
     res.json(deleteAlumno)
 }
+const getUfController = async (req, res) => {
+    const getUf = await getUfServices(req);
+    res.json(getUf)
+}
 
 
 
 
 
 
-module.exports = { getAlumnoByIdController, addAlumnoController, getAllAlumnosController, updateAlumnoController, deleteAlumnoController };
+module.exports = { getAlumnoByIdController, addAlumnoController, getAllAlumnosController, updateAlumnoController, deleteAlumnoController, getUfController };

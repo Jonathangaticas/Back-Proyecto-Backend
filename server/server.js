@@ -9,5 +9,6 @@ server.get('/', (_, res) => {
 })
 
 server.use('/api', alumnosRoutes)
+server.use('/api/precio', alumnosRoutes)
 
 module.exports =  server; 

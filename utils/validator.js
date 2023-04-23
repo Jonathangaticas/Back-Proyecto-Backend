@@ -28,7 +28,15 @@ const validateCreate = [
         .exists()
         .not()
         .isEmpty()
-        .isString(),
+        .isString()
+        .notEmpty().withMessage('La fecha es obligatoria')
+        .custom((value) => {
+            const date = moment(value, 'DD-MM-YYYY', true);
+            if (!date.isValid()) {
+            throw new Error('La fecha no es válida');
+            }
+            return true;
+        }),
     check('correo')
         .exists()
         .not()
@@ -46,7 +54,6 @@ const validateCreate = [
     check('fecha')
         .exists()
         .not()
-        .isEmpty()
         .notEmpty().withMessage('La fecha es obligatoria')
         .custom((value) => {
             const date = moment(value, 'DD-MM-YYYY', true);

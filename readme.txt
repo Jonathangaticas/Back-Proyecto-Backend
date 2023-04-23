@@ -8,6 +8,7 @@ POST:
         en la base de datos. 
       - El rut debe tener entre 7 y 8 digitos. (express-validator)
       - Al ingresar un rut ya existente, envia el mensaje de "alumno existente". (Middleware).
+      - El campo de fecha y fecha de nacimiento se ingresa en el orden de DD-MM-AAAA (express-validator).
       - Se verifica que cada campo de datos este completo y con sus respectivas propiedades (express-validator).
 
 GET BY ID: 
@@ -26,8 +27,8 @@ DELETE:
       - Se ingresa el rut por metodo PARAMS y si es que no existe, envia el mensaje. (Middleware).
       - Se eliminan los datos del alumno matriculado.
 
-
-      
+GET UF:
+      - Se conecta a una api externa mediante una ruta para obtener el valor de la uf chilena.
 
 
 
